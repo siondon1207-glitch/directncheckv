@@ -1,23 +1,864 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
+
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "2026년형 렉서스 가격 변동 요인과 하이브리드 세단의 평균 취등록세는 얼마인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2026년형 렉서스 ES300h 및 신규 라인업의 가격은 환율 변동과 하이브리드 개별소비세 감면 기준 변경에 영향을 받습니다. 차량 가격 외에 부과되는 취등록세는 하이브리드 세제 혜택 감면 한도를 적용해 정밀하게 계산해야 하며, 평균적으로 차량 실구매 금액의 약 7퍼센트 수준에서 세금 감면 혜택을 차감한 비용으로 산출됩니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "수입차 커뮤니티에서 말하는 렉서스 할인 성지와 견적 계산기 활용법은 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "보배드림, 디시인사이드, 펨코 등 주요 자동차 커뮤니티에서는 비공식 딜러 프로모션이나 일시불 캐시백 좌표를 활발히 교환합니다. 다이렉트 견적 사이트의 온라인 모의 계산기 어플이나 제미나이, 챗지피티 등 인공지능 AI 상담 컨설팅을 연계해 각 딜러사별 실질 구매 금액 차이점과 납부 요금을 꼼꼼하게 비교 분석하는 것이 가장 권장되는 할인 가입 방법입니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "렉서스 장기 렌트 및 리스 이용료와 할부 금융 요금제 비교 시 장단점은 어떻게 되나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "수입차 장기 렌트와 리스 상품은 매월 납부하는 요금에 취등록세, 자동차세 등이 포함되어 초기 목돈 부담이 적고 세무 처리가 간편하다는 장점이 있습니다. 반면 일시불이나 저금리 다이렉트 신용 할부에 비해 총 지출 비용 면에서는 다소 높을 수 있으므로, 자신의 연간 주행거리와 사업자 세액 공제 요건을 분석하여 전문 업체를 통한 맞춤형 견적 상담을 신청해 보는 것이 가장 경제적입니다."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input, select, textarea, button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+        
+        :root {
+            --primary-color: #1a252c; 
+            --secondary-color: #8c7853; 
+            --accent-color: #c5a880; 
+            --text-color: #2c3e50; 
+            --bg-light: #fdfdfd; 
+            --bg-medium: #f2ede4; 
+            --bg-dark: #1a252c; 
+            --btn-cta: #8c7853; 
+            --soft-yellow: #fdfaf2; 
+            --soft-blue: #eef3f8; 
+            --text-muted: #7f8c8d;
+        }
+        
+        body { 
+            font-family: 'Noto Sans KR', sans-serif; 
+            background-color: var(--bg-light); 
+            color: var(--text-color); 
+            line-height: 1.9; 
+            font-weight: 400; 
+        }
+        
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 30px; 
+        }
+        
+        header { 
+            background-color: #fff; 
+            padding: 25px 0; 
+            text-align: center; 
+            border-bottom: 3px solid var(--secondary-color); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+        header h1 { 
+            margin: 0; 
+            font-size: 2.2em; 
+            color: var(--primary-color); 
+            font-weight: 900; 
+            letter-spacing: -1px;
+        }
+        header h1 a { 
+            text-decoration: none; 
+            color: inherit; 
+        }
+
+        .hero { 
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2c3e50 100%); 
+            color: #fff; 
+            text-align: center; 
+            padding: 80px 20px 60px; 
+        }
+        .hero h1 { 
+            font-size: 3em; 
+            margin-bottom: 25px; 
+            font-weight: 900; 
+            letter-spacing: -1.5px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3); 
+        }
+        .hero p { 
+            font-size: 1.3em; 
+            margin-bottom: 30px; 
+            font-weight: 300; 
+            color: #d1d8e0;
+        }
+        
+        .compare-form-box { 
+            background-color: #fff; 
+            padding: 45px; 
+            border-radius: 16px; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12); 
+            margin: -20px auto 0; 
+            max-width: 950px;
+            position: relative; 
+            z-index: 10; 
+            border-top: 6px solid var(--secondary-color); 
+            text-align: left; 
+        }
+        .compare-form-box h2 { 
+            color: var(--primary-color); 
+            text-align: center; 
+            margin-bottom: 15px; 
+            font-size: 1.8em; 
+            font-weight: 700; 
+        }
+        .compare-form-box .sub-intro {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.1em;
+            margin-bottom: 35px;
+        }
+        .compare-form-box label { 
+            display: block; 
+            margin-bottom: 10px; 
+            font-weight: 700; 
+            color: var(--primary-color); 
+            font-size: 1em; 
+        }
+        .compare-form-box input, 
+        .compare-form-box select { 
+            width: 100%; 
+            padding: 14px; 
+            margin-bottom: 22px; 
+            border: 1px solid #dcdde1; 
+            border-radius: 6px; 
+            box-sizing: border-box; 
+            font-size: 0.95em; 
+            background-color: #fafbfc;
+            color: var(--text-color);
+            transition: all 0.3s;
+        }
+        .compare-form-box input:focus, 
+        .compare-form-box select:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            background-color: #fff;
+        }
+        .form-row { 
+            display: flex; 
+            gap: 25px; 
+        }
+        .form-column { 
+            flex: 1; 
+        }
+        
+        .calculator-preview {
+            background-color: var(--soft-yellow);
+            border: 1px solid var(--accent-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            font-size: 1em;
+            color: var(--primary-color);
+        }
+        .calculator-preview p {
+            margin-bottom: 5px;
+        }
+        .calculator-preview span {
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+        
+        .cta-btn { 
+            background-color: var(--btn-cta); 
+            color: #fff; 
+            padding: 18px 45px; 
+            font-size: 1.25em; 
+            font-weight: 700; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            transition: background-color 0.3s, transform 0.2s; 
+            box-shadow: 0 5px 15px rgba(140,120,83,0.3); 
+            text-decoration: none; 
+            display: block; 
+            width: 100%;
+            text-align: center;
+            margin-top: 15px; 
+        }
+        .cta-btn:hover { 
+            background-color: var(--btn-hover); 
+            transform: translateY(-2px); 
+            box-shadow: 0 7px 20px rgba(140,120,83,0.4); 
+        }
+
+        .content-section { 
+            background-color: #fff; 
+            padding: 80px 0; 
+            margin-top: 40px; 
+            border-radius: 16px; 
+            box-shadow: 0 4px 25px rgba(0,0,0,0.04); 
+        }
+        .content-section h2 { 
+            font-size: 2.2em; 
+            color: var(--primary-color); 
+            border-bottom: 2px solid var(--bg-medium); 
+            padding-bottom: 20px; 
+            margin-bottom: 35px; 
+            text-align: center; 
+            font-weight: 900; 
+            letter-spacing: -1px;
+        }
+        .content-section h3 { 
+            font-size: 1.6em; 
+            color: var(--secondary-color); 
+            margin-top: 45px; 
+            margin-bottom: 18px; 
+            border-left: 4px solid var(--secondary-color); 
+            padding-left: 15px; 
+            font-weight: 700; 
+        }
+        .content-section p { 
+            font-size: 1.05em; 
+            margin-bottom: 24px; 
+            color: #4a5568;
+            text-align: justify;
+        }
+        .content-section strong { 
+            color: var(--primary-color); 
+            font-weight: 700; 
+        }
+
+        .feature-grid { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: space-around; 
+            text-align: center; 
+            margin-top: 40px; 
+            gap: 20px;
+        }
+        .feature-grid .item { 
+            flex: 1;
+            min-width: 280px;
+            padding: 35px 25px; 
+            background-color: var(--bg-light); 
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02); 
+            border: 1px solid #f0edf5;
+            transition: transform 0.3s, background-color 0.3s; 
+        }
+        .feature-grid .item:hover { 
+            transform: translateY(-5px); 
+            background-color: var(--soft-yellow); 
+        }
+        .feature-grid .item h3 { 
+            font-size: 1.35em; 
+            color: var(--primary-color); 
+            margin-top: 0; 
+            border-left: none;
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+
+        .keyword-list { 
+            list-style: none; 
+            padding: 0; 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            margin-top: 35px; 
+        }
+        .keyword-list li { 
+            background-color: var(--bg-medium); 
+            color: var(--primary-color); 
+            padding: 10px 22px; 
+            margin: 6px; 
+            border-radius: 30px; 
+            font-weight: 500; 
+            font-size: 0.95em; 
+            transition: all 0.3s; 
+        }
+        .keyword-list li:hover { 
+            background-color: var(--secondary-color); 
+            color: #fff;
+        }
+        
+        .faq-item { 
+            border-bottom: 1px solid var(--bg-medium); 
+            padding: 25px 0; 
+        }
+        .faq-item h3 { 
+            cursor: pointer; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            font-size: 1.2em; 
+            color: var(--primary-color); 
+            font-weight: 700; 
+            border-left: none;
+            padding-left: 0;
+            margin-top: 0;
+        }
+        .faq-item p { 
+            display: none; 
+            padding: 20px; 
+            color: #555; 
+            background-color: var(--soft-yellow); 
+            border-radius: 8px; 
+            margin-top: 15px; 
+            font-size: 0.98em;
+            line-height: 1.8;
+        }
+        .faq-item.active p { 
+            display: block; 
+        }
+        
+        .data-visualization { 
+            margin-top: 45px; 
+            padding: 35px; 
+            background-color: var(--bg-light); 
+            border-radius: 12px; 
+            border: 1px solid #eae6df; 
+        }
+        .data-visualization h3 { 
+            text-align: center; 
+            color: var(--primary-color); 
+            margin-bottom: 25px; 
+            border-left: none;
+            padding-left: 0;
+        }
+        .data-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            text-align: center; 
+        }
+        .data-table th, .data-table td { 
+            border: 1px solid #eae6df; 
+            padding: 15px 10px; 
+            font-size: 0.92em; 
+        }
+        .data-table th { 
+            background-color: var(--bg-medium); 
+            color: var(--primary-color); 
+            font-weight: 700; 
+        }
+        .data-table tr:nth-child(even) { 
+            background-color: var(--soft-yellow); 
+        }
+        
+        .external-links { 
+            margin-top: 50px; 
+            padding: 30px; 
+            border-top: 2px solid var(--secondary-color); 
+        }
+        .external-links h2 {
+            font-size: 1.8em;
+            text-align: left;
+            border-bottom: none;
+            margin-bottom: 20px;
+            padding-bottom: 0;
+        }
+        .external-links ul { 
+            list-style: none; 
+            padding: 0; 
+        }
+        .external-links li { 
+            margin-bottom: 12px; 
+        }
+        .external-links a { 
+            color: var(--secondary-color); 
+            text-decoration: none; 
+            font-weight: 500; 
+            font-size: 1.05em; 
+            transition: color 0.3s; 
+            border-bottom: 1px dashed var(--secondary-color); 
+            padding-bottom: 1px; 
+        }
+        .external-links a:hover { 
+            color: var(--primary-color); 
+            border-bottom-color: var(--primary-color); 
+        }
+
+        footer { 
+            background-color: var(--bg-dark); 
+            color: #a4b0be; 
+            text-align: center; 
+            padding: 60px 20px; 
+            font-size: 0.95em; 
+            margin-top: 50px;
+        }
+        footer a { 
+            color: var(--accent-color); 
+            text-decoration: none; 
+            margin: 0 15px; 
+            transition: color 0.3s; 
+        }
+        footer a:hover { 
+            color: #fff; 
+            text-decoration: underline; 
+        }
+
+        @media (max-width: 900px) {
+            .form-row { flex-direction: column; gap: 0; }
+            .feature-grid .item { width: 100%; }
+            .content-section h2 { font-size: 1.8em; }
+            .content-section h3 { font-size: 1.4em; }
+            .hero h1 { font-size: 2.2em; }
+            .compare-form-box { padding: 30px 20px; }
+            .data-table th, .data-table td { padding: 10px 5px; font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1><a href="/">2026 렉서스 가격 정보 가이드: 모델별 공식 출고가와 최적 견적</a></h1>
+        </div>
+    </header>
+
     <main>
-      <h1>Home page</h1>
+        <section class="hero">
+            <div class="container">
+                <h1>렉서스 가격 전차종 실시간 비교 분석</h1>
+                <p>2026년형 가솔린, 하이브리드, 플러그인 하이브리드 및 순수 전기차까지 최적의 견적 요금을 제안합니다.</p>
+                
+                <div class="compare-form-box">
+                    <h2>렉서스 맞춤형 신차 견적 모의 계산 및 상담 신청</h2>
+                    <p class="sub-intro">원하시는 차종과 상세 조건을 입력하시면 실시간 할인 프로모션 혜택이 적용된 실구매 예상 금액을 산출해 드립니다.</p>
+                    
+                    <form id="lexusForm" action="#" method="post">
+                        <div class="form-row">
+                            <div class="form-column">
+                                <label for="customerName">고객 성함</label>
+                                <input type="text" id="customerName" placeholder="이름을 정확히 입력해 주세요" required>
+                            </div>
+                            <div class="form-column">
+                                <label for="customerPhone">연락처</label>
+                                <input type="tel" id="customerPhone" placeholder="휴대폰 번호 (예: 01012345678)" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-column">
+                                <label for="carModel">렉서스 관심 모델 선택 (30여 개 차종)</label>
+                                <select id="carModel" required onchange="updateEstimatedPrice()">
+                                    <option value="">차종을 선택해 주세요</option>
+                                    <option value="es300h_lux">ES 300h Luxury (하이브리드)</option>
+                                    <option value="es300h_lux_plus">ES 300h Luxury+ (하이브리드)</option>
+                                    <option value="es300h_exec">ES 300h Executive (하이브리드)</option>
+                                    <option value="es300h_fsport">ES 300h F SPORT (하이브리드)</option>
+                                    <option value="es350e_prem">ES 350e Premium (순수 전기차)</option>
+                                    <option value="es350e_lux">ES 350e Luxury (순수 전기차)</option>
+                                    <option value="es350h_prem">ES 350h Premium (가솔린 하이브리드)</option>
+                                    <option value="nx350h_prem">NX 350h Premium (하이브리드 SUV)</option>
+                                    <option value="nx350h_lux">NX 350h Luxury (하이브리드 SUV)</option>
+                                    <option value="nx450h_prem">NX 450h+ Premium (플러그인 하이브리드)</option>
+                                    <option value="nx450h_fsport">NX 450h+ F SPORT (플러그인 하이브리드)</option>
+                                    <option value="rx350h_prem">RX 350h Premium (준대형 하이브리드)</option>
+                                    <option value="rx350h_lux">RX 350h Luxury (준대형 하이브리드)</option>
+                                    <option value="rx450h_lux">RX 450h+ Luxury (플러그인 하이브리드)</option>
+                                    <option value="rx500h_fsport">RX 500h F SPORT Performance (고성능 HEV)</option>
+                                    <option value="ux300h_2wd">UX 300h 2WD (콤팩트 하이브리드)</option>
+                                    <option value="ux300h_awd">UX 300h AWD (콤팩트 하이브리드)</option>
+                                    <option value="ux300h_fsport">UX 300h F SPORT (콤팩트 하이브리드)</option>
+                                    <option value="ls500h_lux">LS 500h Luxury (플래그십 세단)</option>
+                                    <option value="ls500h_plat">LS 500h Platinum (플래그십 세단)</option>
+                                    <option value="ls500_sup">LS 500 Supreme (가솔린 플래그십)</option>
+                                    <option value="ls500_lux">LS 500 Luxury (가솔린 플래그십)</option>
+                                    <option value="ls500_plat">LS 500 Platinum (가솔린 플래그십)</option>
+                                    <option value="lm500h_royal">LM 500h Royal (최고급 MPV 4인승)</option>
+                                    <option value="lm500h_exec">LM 500h Executive (최고급 MPV 6인승)</option>
+                                    <option value="rz450e_sup">RZ 450e Supreme (순수 전기 SUV)</option>
+                                    <option value="rz450e_lux">RZ 450e Luxury (순수 전기 SUV)</option>
+                                    <option value="lc500_coupe">LC 500 Coupe (럭셔리 스포츠 쿠페)</option>
+                                    <option value="lc500_conv">LC 500 Convertible (럭셔리 컨버터블)</option>
+                                    <option value="lx700h_lux">LX 700h Luxury (초대형 하이브리드 SUV)</option>
+                                    <option value="gx550_over">GX 550 Overtrail (정통 오프로드 SUV)</option>
+                                    <option value="tx500h_fsport">TX 500h F SPORT (패밀리 3열 SUV)</option>
+                                </select>
+                            </div>
+                            <div class="form-column">
+                                <label for="purchaseType">구매 형태 및 금융 요금제</label>
+                                <select id="purchaseType" required>
+                                    <option value="">선택해 주세요</option>
+                                    <option value="cash">현금 일시불 (카드 캐시백 적용)</option>
+                                    <option value="installment">신차 저금리 할부</option>
+                                    <option value="lease">운용 리스 (비용 처리 목적)</option>
+                                    <option value="rental">장기 렌트 (세금 포함 월납 요금)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-column">
+                                <label for="downPayment">예상 인도금 및 선수금 설정 (원)</label>
+                                <select id="downPayment" required>
+                                    <option value="0">인도금 없음 (초기비용 0원)</option>
+                                    <option value="1000">1,000만 원 내외</option>
+                                    <option value="2000">2,000만 원 내외</option>
+                                    <option value="3000">3,000만 원 내외</option>
+                                    <option value="4000">4,000만 원 이상</option>
+                                </select>
+                            </div>
+                            <div class="form-column">
+                                <label for="leaseTerm">희망 이용 기간 (할부/리스/렌트)</label>
+                                <select id="leaseTerm" required>
+                                    <option value="none">해당 없음 (일시불)</option>
+                                    <option value="36">36개월</option>
+                                    <option value="48">48개월</option>
+                                    <option value="60">60개월</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-column">
+                                <label for="driverAge">운전자 연령 한정 기준</label>
+                                <select id="driverAge" required>
+                                    <option value="21">만 21세 이상</option>
+                                    <option value="26">만 26세 이상</option>
+                                    <option value="30">만 30세 이상</option>
+                                    <option value="35">만 35세 이상</option>
+                                    <option value="all">전 연령 누구나</option>
+                                </select>
+                            </div>
+                            <div class="form-column">
+                                <label for="userLocation">출고 및 인도 희망 지역</label>
+                                <select id="userLocation" required>
+                                    <option value="seoul">서울특별시 / 수도권</option>
+                                    <option value="busan">부산광역시 / 영남권</option>
+                                    <option value="daegu">대구광역시 / 경북권</option>
+                                    <option value="gwangju">광주광역시 / 호남권</option>
+                                    <option value="daejeon">대전광역시 / 충청권</option>
+                                    <option value="gangwon">강원특별자치도</option>
+                                    <option value="jeju">제주특별자치도</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-column">
+                                <label for="consultOption">희망 상담 및 안내 방식</label>
+                                <select id="consultOption" required>
+                                    <option value="sms">카카오톡 메시지로 견적서만 수신</option>
+                                    <option value="call">전문 금융 컨설턴트 유선 유선 통화</option>
+                                    <option value="email">이메일로 상세 분석 자료 수신</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="calculator-preview" id="pricePreviewBox">
+                            <p>선택하신 차량의 대략적인 공식 출고가 범위는 다음과 같습니다.</p>
+                            <p>기본 예상 금액: <span id="carPriceRange">모델을 선택하면 금액이 표시됩니다.</span></p>
+                            <p id="previewDetail" style="font-size: 0.85em; color: var(--text-muted); margin-top: 10px;">신청서 제출 완료 시 개별 할인 프로모션 혜택이 적용된 실구매가 전산 견적서가 발송됩니다.</p>
+                        </div>
+
+                        <button type="submit" class="cta-btn">실시간 최저가 할인 견적서 신청하기</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2>2026년도 렉서스 브랜드 하이브리드 차량 시장 전망</h2>
+                <p>
+                    수입 프리미엄 하이브리드 시장을 선도해 온 렉서스는 2026년에도 친환경차 세제 혜택 유지 흐름과 안정적인 내구성을 무기로 국내 시장에서의 입지를 더욱 굳건히 다지고 있습니다. 과거 단순한 일본차 브랜드라는 인식을 넘어 뛰어난 정숙성과 극대화된 연료 효율성을 바탕으로 스마트한 오너들의 합리적인 선택지로 인정받았습니다. 특히 수입 하이브리드 부문 누적 판매량 순위에서 최상위권을 유지하는 ES 300h는 감가상각이 적은 수입차를 찾는 분들에게 가장 먼저 추천되는 기종입니다. 
+                </p>
+                <p>
+                    최근 전기차 캐즘 여파와 고유가 상황이 맞물리면서 하이브리드 모델의 중고차 잔존가치가 높게 유지되고 있어 일시불 구매뿐만 아니라 장기 렌트나 리스 상품에 대한 신규 신청 수요도 큰 폭으로 증가했습니다. 또한 국산차 및 여타 유럽 브랜드와 비교해 조용하고 편안한 패밀리카를 지향하는 렉서스의 브랜드 지향점은 패밀리 SUV 시장에서 NX 350h, RX 450h+ 등의 강력한 견인력으로 나타나고 있습니다. 2026년에는 본격적인 순수 전기차 라인업인 ES 350e, RZ 450e 등 차세대 전동화 플랫폼이 대거 합류함에 따라 친환경 지원금 혜택과 맞물린 다각적인 비교 선택이 가능해졌습니다.
+                </p>
+
+                <h3>수입차 최저가 구매를 위한 다이렉트 견적 비교의 중요성</h3>
+                <p>
+                    수입차 구매 시 대리점 전시장마다 적용되는 비공식 할인 및 프로모션 비율이 제각각이기 때문에 오프라인 전시장을 직접 방문하여 견적을 받는 것만으로는 가장 저렴한곳을 찾아내기 어렵습니다. 따라서 대다수의 스마트한 구매자들은 인터넷 가격비교 사이트를 활용하거나, 네이버 검색, 구글 포털에서 다양한 딜러사 연계 전문 금융 업체를 통해 실시간 온라인 최저가 견적을 비교받는 방법을 선택하고 있습니다. 다이렉트 금융 상담을 이용하면 딜러사 중간 유통 마진이 절감될 뿐 아니라, 불필요한 중간 수수료 없이 리스나 장기 렌트 요금을 획기적으로 낮출 수 있습니다.
+                </p>
+
+                <div class="feature-grid">
+                    <div class="item">
+                        <h3>일시불 캐시백과 현금지원</h3>
+                        <p>카드 제휴 금융사를 통해 일시불로 차량을 인도받을 때 발생하는 대규모 캐시백 혜택과 비공식 추가 지원금 정보를 비교해 가장 유리한 조건으로 가입을 지원합니다.</p>
+                    </div>
+                    <div class="item">
+                        <h3>리스 및 장기렌트 요금제 설계</h3>
+                        <p>개인 및 법인 사업자의 세금 절감을 위해 취등록세와 자동차세가 포함된 맞춤형 장기 렌트 요금제를 세밀히 계산하여 가장 경제적인 유지 비용을 찾아냅니다.</p>
+                    </div>
+                    <div class="item">
+                        <h3>차세대 전동화 라인업 비교</h3>
+                        <p>하이브리드(HEV), 플러그인 하이브리드(PHEV), 전기차(BEV)의 유류비 및 세제 혜택 차이점을 인공지능 AI 기반 데이터를 토대로 정밀 컨설팅해 드립니다.</p>
+                    </div>
+                </div>
+
+                <div class="data-visualization">
+                    <h3>2026 렉서스 주요 모델 트림별 공식 가격 및 예상 실구매가 안내</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>대상 모델명</th>
+                                <th>공식 출시 가격</th>
+                                <th>평균 예상 할인</th>
+                                <th>실제 실구매 비용</th>
+                                <th>금융 요금 추천</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>베스트 셀러 세단</td>
+                                <td>ES 300h Luxury+ (HEV)</td>
+                                <td>68,250,000 원</td>
+                                <td>3,500,000 원</td>
+                                <td>64,750,000 원</td>
+                                <td>장기 리스 및 할부</td>
+                            </tr>
+                            <tr>
+                                <td>프리미엄 세단</td>
+                                <td>ES 300h Executive (HEV)</td>
+                                <td>71,880,000 원</td>
+                                <td>4,000,000 원</td>
+                                <td>67,880,000 원</td>
+                                <td>운용 리스 추천</td>
+                            </tr>
+                            <tr>
+                                <td>도심형 SUV</td>
+                                <td>UX 300h 2WD (HEV)</td>
+                                <td>52,400,000 원</td>
+                                <td>2,500,000 원</td>
+                                <td>49,900,000 원</td>
+                                <td>다이렉트 할부</td>
+                            </tr>
+                            <tr>
+                                <td>패밀리 SUV</td>
+                                <td>NX 350h Luxury (HEV)</td>
+                                <td>74,400,000 원</td>
+                                <td>3,000,000 원</td>
+                                <td>71,400,000 원</td>
+                                <td>장기 렌트 추천</td>
+                            </tr>
+                            <tr>
+                                <td>친환경 PHEV SUV</td>
+                                <td>NX 450h+ F SPORT (PHEV)</td>
+                                <td>84,500,000 원</td>
+                                <td>4,500,000 원</td>
+                                <td>80,000,000 원</td>
+                                <td>사업자 비용 처리</td>
+                            </tr>
+                            <tr>
+                                <td>준대형 SUV</td>
+                                <td>RX 350h Premium (HEV)</td>
+                                <td>86,750,000 원</td>
+                                <td>4,000,000 원</td>
+                                <td>82,750,000 원</td>
+                                <td>리스 요금 설계</td>
+                            </tr>
+                            <tr>
+                                <td>최고급 플러그인</td>
+                                <td>RX 450h+ Luxury (PHEV)</td>
+                                <td>109,700,000 원</td>
+                                <td>6,000,000 원</td>
+                                <td>103,700,000 원</td>
+                                <td>장기 렌트 요금</td>
+                            </tr>
+                            <tr>
+                                <td>플래그십 세단</td>
+                                <td>LS 500h Luxury (HEV)</td>
+                                <td>153,000,000 원</td>
+                                <td>12,000,000 원</td>
+                                <td>141,000,000 원</td>
+                                <td>법인 특판 리스</td>
+                            </tr>
+                            <tr>
+                                <td>프리미엄 미니밴</td>
+                                <td>LM 500h Executive (HEV)</td>
+                                <td>148,000,000 원</td>
+                                <td>1,500,000 원</td>
+                                <td>146,500,000 원</td>
+                                <td>의전용 법인 리스</td>
+                            </tr>
+                            <tr>
+                                <td>순수 전기 SUV</td>
+                                <td>RZ 450e Supreme (BEV)</td>
+                                <td>84,000,000 원</td>
+                                <td>8,500,000 원</td>
+                                <td>75,500,000 원</td>
+                                <td>전기차 특별 지원</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 0.85em; color: var(--text-muted); margin-top: 15px; text-align: center;">위의 금액표는 2026년형 차량 기본 출시가 기준이며, 제조사 비공식 프로모션과 세제 혜택 한도에 따라 실구매 예상 단가는 변동될 수 있습니다.</p>
+                </div>
+
+                <h3>디시, 보배드림, 펨코 유저들이 찾는 렉서스 구매의 실제 정보</h3>
+                <p>
+                    자동차 전문 온라인 커뮤니티인 보배드림, 디시인사이드 차갤, 에펨코리아(펨코) 수입차 게시판 등에서는 매달 수입차 브랜드별 프로모션 동향이 뜨겁게 다뤄집니다. 특히 많은 유저들이 실시간으로 비공식 할인이 가장 높은 전국의 대리점 성지 좌표 및 내돈내산 출고 후기를 상세하게 공유하고 있습니다. 딜러들이 제공하는 기본 썬팅이나 블랙박스 수준의 혜택 외에도 실제 신차 패키지로 사은품이나 상품권, 혹은 카드 일시불 시 지급되는 현금지원 수준이 얼마인지 꼼꼼하게 따져보는 유저들이 대다수입니다.
+                </p>
+                <p>
+                    최근 펨코와 보배드림에서 큰 이슈가 되었던 렉서스 하이브리드 세단 비교 글에 따르면, 공식 고객센터를 통한 대리점 방문 상담보다는 인터넷 다이렉트 견적 사이트나 토스 같은 모바일 제휴 채널을 활용하는 것이 딜러 서비스 지원금 수준에서 훨씬 유리하다는 주장이 힘을 얻고 있습니다. 또한 각 전시장 딜러사별로 차량 재고 여부와 계약 후 대기 기간 차이점이 크기 때문에, 실시간 모바일 텔레그램이나 카카오톡 상담 채널을 활용해 여러 딜러사의 실구매 비용 견적서를 실시간으로 받아보는 신청 방법이 대세로 자리 잡았습니다.
+                </p>
+
+                <h3>하이브리드 세단과 하이브리드 SUV 모델별 핵심 장단점 분석</h3>
+                <p>
+                    수많은 수입 패밀리카 후보 중에서 렉서스 브랜드를 선택할 때 가장 고민하는 부분은 단연 세단과 SUV의 차이점 및 장단점입니다. 베스트셀러인 ES 300h 하이브리드 세단의 경우 동급 유럽 프리미엄 가솔린 모델 대비 정숙성과 연비 면에서 압도적인 장점을 지니고 있습니다. 반면 다소 고전적인 실내 인테리어 레이아웃과 수입 브랜드 중에서는 역동성이 부족하다는 주행 특성이 단점으로 꼽히기도 합니다. 이에 비해 NX 350h나 RX 350h 같은 SUV 라인업은 실내 공간이 여유롭고 높은 시야를 제공하지만 세단에 비해 초기 차량 판매 비용과 취등록세 부담이 다소 크다는 점을 사전에 반드시 계산해 보아야 합니다.
+                </p>
+                <p>
+                    또한 플러그인 하이브리드 기종인 NX 450h+나 RX 450h+는 도심 단거리 출퇴근 시 순수 전기 모드만으로 유류비를 완벽하게 절약할 수 있는 메리트가 있지만, 자택 내 충전 인프라가 미비할 경우에는 충전 스트레스와 차량 본체 금액의 높은 감가상각 위험이 단점이 될 수 있습니다. 2026년에는 이와 같이 각 파워트레인의 세부 종류에 따라 발생하는 초기 투자 비용 대비 유지비를 차량 가격 계산기 어플이나 인터넷 모의 계산 시스템을 활용해 정교하게 분석하는 현명함이 요구됩니다.
+                </p>
+
+                <h3>금융 계약에 따른 유지 비용 설계 요금 분석</h3>
+                <p>
+                    수입차 가입 시 지출되는 예산 부담을 줄이기 위해서는 개개인의 세무 및 금융 상황에 맞춘 체계적인 요금제 컨설팅이 필수적입니다. 수입차 할부 금융사의 제휴 요금제는 매월 일정한 요금으로 할부금을 상환하여 자기 소유로 차량을 완벽하게 귀속시키는 정통적인 방식입니다. 이와 달리 장기 리스는 만기 시 반납과 인수를 자유롭게 선택할 수 있으며, 차량 명의가 리스사로 유지되므로 품위 유지 및 비용 처리가 최적화된 사업자 선호 방식입니다. 장기 렌트는 번호판이 렌터카 전용 번호판으로 발급되는 사소한 차이점이 있지만 세금과 의료보험료 인상 요인이 전혀 발생하지 않아 월 요금 납부의 투명성 면에서 압도적으로 저렴한곳을 지향하는 합리적 소비자에게 제격입니다.
+                </p>
+                <p>
+                    구글 및 네이버 자동차 탭에서 활동하는 전문 분석가들의 리포트에 따르면, 2026년형 렉서스를 리스로 이용할 시 월 납입료 내에 소모품 무상 보증 혜택 및 정비 서비스 상품권 제공 이벤트가 포함되어 장기적 수리 비용 절감 효과도 누릴 수 있다고 전해집니다. 이처럼 개인의 주행 환경과 비즈니스 활용 형태에 따라 월 요금 절약 공식이 다르므로, 가입 신청 전 반드시 1대1 무상 맞춤 상담을 이용해 견적을 검증해 보실 것을 적극 권장합니다.
+                </p>
+
+                <h3>인공지능 AI 상담 기술을 활용한 스마트한 견적 검증 트렌드</h3>
+                <p>
+                    수입차 판매 대리점이나 대형 리스 전문 업체와의 직접 접촉이 조심스러운 고객들이 점차 늘어남에 따라, 최근에는 챗지피티 및 제미나이 등의 인세대 생성형 인공지능 AI 기술을 통해 차량 등급 추천 순위와 월 납입금을 사전 비교해 보는 유저들이 증가하고 있습니다. AI 플랫폼은 방대한 전국 딜러사별 실구매가 후기 데이터와 금리 조건표를 단시간에 비교 분석하여 사용자의 자금 흐름에 딱 맞는 추천 모델을 제시해 줍니다. 
+                </p>
+                <p>
+                    뿐만 아니라 스마트폰에 설치된 다양한 금융 앱이나 모바일 비교 어플, 토스 앱의 내차 사기 기능 등에서도 실시간 수입차 제휴 이벤트를 통해 저렴한 렉서스 모델 추천 리스트를 간편하게 송출해 주고 있습니다. 복잡한 수입차 취등록 세금 계산과 매달 납부하는 실제 이율을 간편하게 해결하고, 비대면 다이렉트 좌표를 안내받아 성지 대리점을 안전하게 연계받는 등 2026년 수입차 유통 트렌드는 날이 갈수록 고도화되고 있어 이를 영리하게 활용하는 것이 핵심입니다.
+                </p>
+            </div>
+        </section>
+        
+        <section class="content-section" style="background-color: var(--bg-medium); margin-top: 40px;">
+            <div class="container" style="text-align: center;">
+                <h2>렉서스 가격비교 관련 핵심 검색어 리스트</h2>
+                <p style="color: var(--primary-color); text-align: center; margin-bottom: 30px;">소비자들이 온라인 포털에서 함께 가장 많이 찾고 대조해 보는 실제 검색 키워드 모음입니다.</p>
+                <ul class="keyword-list">
+                    <li>렉서스 가격</li>
+                    <li>렉서스 ES300h 최저가</li>
+                    <li>렉서스 SUV 하이브리드 추천</li>
+                    <li>렉서스 장기렌트 비용</li>
+                    <li>렉서스 리스 요금 계산</li>
+                    <li>렉서스 프로모션 할인 성지</li>
+                    <li>렉서스 공식 고객센터 번호</li>
+                    <li>수입 하이브리드 자동차 비교</li>
+                    <li>렉서스 무사고 중고차 시세</li>
+                    <li>렉서스 신차 패키지 사은품</li>
+                    <li>렉서스 EV 전기차 지원금</li>
+                    <li>렉서스 2026년형 출시일</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2>자주 묻는 질문 FAQ</h2>
+                
+                <div class="faq-item">
+                    <h3>2026년형 렉서스 하이브리드 차량 가입 시 받을 수 있는 세제 혜택과 평균 지원금은 얼마인가요?</h3>
+                    <p>현재 렉서스의 하이브리드 차량들은 개별소비세 교육세 감면 혜택과 하이브리드 취등록세 감면 혜택을 기준에 따라 적용받을 수 있습니다. 차량 공식 가격 외에 추가로 발생하게 되는 취등록세에서 친환경차 감면 한도 혜택이 먼저 적용되며, 각 지방자치단체별 친환경 혜택과 정부 보조금 지원 수준이 상이하므로 실시간 전산 계산기를 통해 본인 거주지 기준으로 사전에 상세 내역을 계산받아 보는 것이 현명합니다.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>일반 대리점과 인터넷 다이렉트 견적 전문 컨설팅 업체의 실질적인 차이점은 무엇인가요?</h3>
+                    <p>공식 전시장은 특정 딜러사에 소속되어 해당 딜러사의 고정 할인 조건과 제한된 금융 상품권만 제공이 가능합니다. 이와 달리 다이렉트 전문 컨설팅 업체는 전국의 수십 개 공식 딜러사와 제휴 금융사 금리 요금을 통합 연계 분석하기 때문에 가장 저렴한곳과 최대 프로모션 성지 좌표를 한눈에 대조해 줍니다. 특히 수수료가 절감된 모바일 전산 시스템을 사용하기 때문에 장기 렌트 요금과 리스 견적 비용 측면에서 월등히 유리한 경우가 많습니다.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>렉서스 장기렌트와 자동차 리스 요금 중 어떤 구매 방식이 가장 추천되나요?</h3>
+                    <p>이용 목적과 비용 처리 여부에 따라 가장 알맞은 가입 형태가 나뉩니다. 사업자의 종합소득세 및 법인세 비용 감면 처리가 핵심이고 수입차 번호판의 품위를 유지하고 싶다면 운용 리스 상품이 적극 추천됩니다. 반면에 매월 청구되는 통합 요금 내에 자동차 종합 보험료와 취등록세 및 유지 보수 비용까지 완벽하게 포함시켜 회계 처리를 깔끔히 해결하고 싶고 본인의 차량 관리 스트레스를 최소화하고 싶다면 장기 렌트가 최상의 대안이 될 것입니다.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>유튜브나 커뮤니티에서 알려진 비공식 프로모션 현금지원 혜택을 실제로 신청할 수 있나요?</h3>
+                    <p>네, 가능합니다. 보배드림이나 디시인사이드 같은 대형 수입차 게시판에서 활동하는 에이전트나 딜러 특판망을 활용하면 매달 렉서스코리아에서 지정하는 공식 조건 이외에 대리점 자체 재량의 추가 비공식 현금지원이나 고가의 신차 블랙박스, 프리미엄 틴팅 사은품 등을 통합해서 혜택을 챙겨 받으실 수 있습니다. 다만 이러한 특판 좌표 혜택은 실시간 재고 물량 소진 시 예고 없이 마감되는 경우가 잦아 사전 신청을 통해 빠르게 우선 선점하는 요령이 절대적으로 유효합니다.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>인터넷으로 신차 가계약을 신청한 후에 마음이 바뀌면 철회가 가능한가요?</h3>
+                    <p>네, 전액 안전하게 철회가 가능합니다. 렉서스 공식 수입 시스템에 대기 계약금을 걸어두는 형태인 비대면 가계약 단계에서는 차량 출고가 확정되어 최종 대금 결제 및 인도 전까지 언제든지 전액 환불 및 전산 철회가 보장됩니다. 따라서 마음에 두고 있는 차종의 대기 기간이 수개월 이상으로 길어지고 있다면 먼저 대기 순번을 잡아두기 위해 가계약부터 신청해 두는 것이 수입차 구매에서 시간 비용을 아끼는 실질적인 팁입니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="background-color: var(--soft-yellow);">
+            <div class="container external-links">
+                <h2>렉서스 가격 정보 수집을 위한 신뢰할 수 있는 공식 정보처</h2>
+                <p style="font-size: 0.95em; color: var(--text-muted); margin-bottom: 25px;">아래의 공신력 있는 공식 외부 유관 기관 및 포털 항목을 방문하시면 렉서스 수입 하이브리드 신차에 관한 다양한 제원 기술 정보 및 통계 자료를 투명하게 수집하실 수 있습니다.</p>
+                <ul>
+                    <li><a href="https://directncheckw.koreahankang.com" target="_blank" rel="nofollow noopener">렉서스 통합 금융 견적 가이드 (reliabledone.com 서브도메인 제공 신뢰 센터)</a>: 모델별 다이렉트 리스 요금 설계 및 최저가 프로모션 연계</li>
+                    <li><a href="https://namu.wiki/w/%EB%A0%89%EC%84%9C%EC%8A%A4" target="_blank" rel="nofollow noopener">나무위키 - 렉서스 브랜드 상세 백과사전</a>: 렉서스 차종 세부 분류 및 개발 역사, 하이브리드 제원 상세 가이드</li>
+                    <li><a href="https://www.lexus.co.kr" target="_blank" rel="nofollow noopener">렉서스코리아 (Lexus Korea) 공식 홈페이지</a>: 공식 카탈로그, 전국 전시장 가이드 및 이벤트 상담 접수처</li>
+                </ul>
+            </div>
+        </section>
     </main>
-  </body>
-</html>
+
+  
+
+    <script>
+        const carPrices = {
+            "es300h_lux": "6,725만 원 ~ 7,180만 원",
+            "es300h_lux_plus": "6,825만 원 ~ 7,290만 원",
+            "es300h_exec": "7,188만 원 ~ 7,550만 원",
+            "es300h_fsport": "7,410만 원 ~ 7,800만 원",
+            "es350e_prem": "6,800만 원 ~ 7,200만 원",
+            "es350e_lux": "7,500만 원 ~ 7,900만 원",
+            "es350h_prem": "6,500만 원 ~ 6,900만 원",
+            "nx350h_prem": "6,500만 원 ~ 6,800만 원",
+            "nx350h_lux": "7,440만 원 ~ 7,800만 원",
+            "nx450h_prem": "7,550만 원 ~ 7,900만 원",
+            "nx450h_fsport": "8,450만 원 ~ 8,900만 원",
+            "rx350h_prem": "8,675만 원 ~ 9,100만 원",
+            "rx350h_lux": "9,743만 원 ~ 1억 200만 원",
+            "rx450h_lux": "1억 970만 원 ~ 1억 1,400만 원",
+            "rx500h_fsport": "1억 1,967만 원 ~ 1억 2,500만 원",
+            "ux300h_2wd": "5,300만 원 ~ 5,600만 원",
+            "ux300h_awd": "5,800만 원 ~ 6,100만 원",
+            "ux300h_fsport": "6,200만 원 ~ 6,600만 원",
+            "ls500h_lux": "1억 5,300만 원 ~ 1억 5,900만 원",
+            "ls500h_plat": "1억 7,300만 원 ~ 1억 8,100만 원",
+            "ls500_sup": "1억 3,300만 원 ~ 1억 3,900만 원",
+            "ls500_lux": "1억 4,300만 원 ~ 1억 4,900만 원",
+            "ls500_plat": "1억 6,300만 원 ~ 1억 6,900만 원",
+            "lm500h_royal": "1억 9,600만 원 ~ 2억 100만 원",
+            "lm500h_exec": "1억 4,800만 원 ~ 1억 5,300만 원",
+            "rz450e_sup": "8,400만 원 ~ 8,800만 원",
+            "rz450e_lux": "9,200만 원 ~ 9,600만 원",
+            "lc500_coupe": "1억 7,500만 원 ~ 1억 8,200만 원",
+            "lc500_conv": "1억 8,500만 원 ~ 1억 9,200만 원",
+            "lx700h_lux": "1억 8,000만 원 ~ 1억 9,500만 원",
+            "gx550_over": "1억 1,000만 원 ~ 1억 2,000만 원",
+            "tx500h_fsport": "9,800만 원 ~ 1억 500만 원"
+        };
+
+        function updateEstimatedPrice() {
+            const selectEl = document.getElementById("carModel");
+            const rangeSpan = document.getElementById("carPriceRange");
+            const selectedVal = selectEl.value;
+            
+            if (selectedVal && carPrices[selectedVal]) {
+                rangeSpan.textContent = carPrices[selectedVal];
+            } else {
+                rangeSpan.textContent = "모델을 선택하면 금액이 표시됩니다.";
+            }
+        }
+
+        document.querySelectorAll('.faq-item h3').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+  
